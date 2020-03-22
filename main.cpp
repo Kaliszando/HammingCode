@@ -4,25 +4,42 @@
 #include "Matrix.h"
 
 int main() {
-	Matrix m0(3, 5);
-	std::cout << m0.toString();
+	array m1;
+	std::vector<int> row1 = { 1, 0, 2 };
+	std::vector<int> row2 = { -1, 3, 1 };
+	m1.push_back(row1);
+	m1.push_back(row2);
+	Matrix M1(m1);
 
-	std::vector< std::vector<int> > arr;
-	std::vector<int> row0 = { 1, 2, 3, 4, 5 };
-	std::vector<int> row1 = { 1, 2, 3, 4, 5 };
-	std::vector<int> row2 = { 1, 2, 3, 4, 5 };
-	arr.push_back(row0);
-	arr.push_back(row1);
-	arr.push_back(row2);
+	array m2;
+	std::vector<int>row3 = { 3, 2, 1 };
+	std::vector<int>row4 = { 1, 1, 0 };
+	m2.push_back(row3);
+	m2.push_back(row4);
+	Matrix M2(Matrix(m2).transpose());
 
-	Matrix m1(arr);
-	std::cout << std::endl  << m1.toString();
+	std::cout << M1.toString() << std::endl;
+	std::cout << M2.toString() << std::endl;
+
+	bool flag = false;
 	try {
-		Matrix m2("plik.txt");
+		M1 * M2;
 	}
 	catch (const char* err) {
 		std::cout << err;
+		flag = true;
 	}
+
+	if (flag == true) {
+		std::cout << "error";
+	}
+	else {
+		Matrix result(M1 * M2);
+		std::cout << result.toString() << std::endl;
+		result.mod(3);
+		std::cout << result.toString();
+	}
+
 
 	getchar();
 	return EXIT_SUCCESS;

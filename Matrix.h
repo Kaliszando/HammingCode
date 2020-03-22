@@ -3,20 +3,26 @@
 #include <vector>
 #include <string>
 
+typedef std::vector< std::vector<int> > array;
+
 class Matrix {
 private:
-	typedef std::vector< std::vector<int> > array;
 	int rows;
 	int columns;
 	array m;
 
 public:
 	Matrix(array);
-	Matrix(int _rows, int _columns);
-	Matrix(std::string fileName);
+	Matrix(int, int);
+	Matrix(std::string);
 
-	array operator*(array);
-	array transpose(array);
+	Matrix transpose();
+	Matrix operator*(Matrix);
 	std::string toString();
+	void mod(int);
+
+	const array getM() const;
+	const int getRows() const;
+	const int getColumns() const;
 };
 
