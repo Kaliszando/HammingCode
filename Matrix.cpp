@@ -113,6 +113,16 @@ std::string Matrix::toString() {
 	return str;
 }
 
+bool Matrix::isZero() {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			if (m[i][j] != 0)
+				return false;
+		}
+	}
+	return true;
+}
+
 // Zastêpuje elementy tablicy resztami z dzielenia modulo
 void Matrix::mod(int mod) {
 	for (int i = 0; i < rows; i++) {
