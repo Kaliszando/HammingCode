@@ -101,7 +101,7 @@ Matrix Matrix::operator*(Matrix m2) {
 	return Matrix(result);
 }
 
-// Zapisanie macierzy do klasy string
+// Zapisanie macierzy do string
 std::string Matrix::toString() {
 	std::string str;
 	for (int i = 0; i < rows; i++) {
@@ -113,7 +113,7 @@ std::string Matrix::toString() {
 	return str;
 }
 
-// Zastêpuje elementy tablicy resztami z dzielenia modulo 2
+// Zastêpuje elementy tablicy resztami z dzielenia modulo
 void Matrix::mod(int mod) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < columns; j++) {
