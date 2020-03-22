@@ -36,7 +36,7 @@ int main() {
 	else {
 		Matrix result(M1 * M2);
 		std::cout << result.toString() << std::endl;
-		result.mod(3);
+		result.mod(2);
 		std::cout << result.toString();
 	}
 
