@@ -4,3 +4,5 @@ This program can code and decode 2^8 messages, and correct up to 2 errors in eac
 
 TODO:
 - implementation in binary
+
+https://en.wikipedia.org/wiki/Hamming_code
